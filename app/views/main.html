@@ -1,0 +1,59 @@
+<div class="app-container">
+
+  <div class="question-container">
+    <div class="row question-air-box">
+      <div class="col-sm-4 point-text noselect" ng-click="resetScore()">
+        <span tooltip-placement="bottom" tooltip="Klikk for å nullstille">{{correctAnsweredQuestions + '/' + totalQuestionsAnswered + " riktig"}}</span>
+      </div>
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4"></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="text-center question-text" ng-class="{'fade-in': questionIsLoading }">{{question.questionText}}</div>
+      </div>
+    </div>
+    <div class="row question-air-box">
+      <div class="col-xs-12">
+      </div>
+    </div>
+  </div>
+
+  <div class="answer-container border-bottom"
+       ng-class="{'correct-answer' : correctAnswer === true}"
+       ng-click="answerQuestion(true)">
+    <div class="row answer-air-box">
+
+    </div>
+    <div class="row">
+      <div class="text-center answer-text noselect">
+        True
+        <span ng-show="userAnswer === true && correctAnswer === true" class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+        <span ng-show="userAnswer === true && correctAnswer === false" class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+      </div>
+    </div>
+
+  </div>
+  <div class="answer-container"
+       ng-class="{'correct-answer' : correctAnswer === false}"
+       ng-click="answerQuestion(false)">
+
+    <div class="row answer-air-box">
+
+    </div>
+
+    <div class="row answer-box">
+      <div class="text-center answer-text noselect">
+        False
+        <span ng-show="userAnswer === false && correctAnswer === false" class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+        <span ng-show="userAnswer === false && correctAnswer === true" class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+      </div>
+    </div>
+    <div class="row answer-air-box">
+
+    </div>
+  </div>
+
+
+</div>
+
